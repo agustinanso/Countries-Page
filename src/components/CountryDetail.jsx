@@ -49,25 +49,25 @@ function CountryDetail() {
                 <div className="flex flex-col  w-full gap-1  [&>p]:text-DarkBlue dark:[&>p]:text-white  [&>p]:font-bold [&>p]:pb-3  [&>p]:flex [&>p]:flex-col xl:[&>p]:text-xl py-8 ">
                   <p>
                     Capital:
-                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
+                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
                       - {detail.capital}
                     </span>
                   </p>
                   <p>
                     Population:
-                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
+                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
                       - {detail.population}
                     </span>
                   </p>
                   <p>
                     Region:
-                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
+                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
                       - {detail.region}
                     </span>
                   </p>
                   <p>
                     Sub Region:
-                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
+                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
                       - {detail.subregion}
                     </span>
                   </p>
@@ -75,7 +75,7 @@ function CountryDetail() {
                 <div className="flex flex-col w-full gap-2 py-8 ">
                   <p className="flex flex-col pb-3 font-bold text-left text-DarkBlue dark:text-white xl:text-xl">
                     Top Level Domain:
-                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue">
+                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue">
                       - {detail.tld}
                     </span>
                   </p>
@@ -84,7 +84,7 @@ function CountryDetail() {
                     {Object.keys(detail.languages).map((languageCode, index) => (
                       <li
                         key={index}
-                        className="px-1 font-normal bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[200px]">
+                        className="px-1 font-normal bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[250px]">
                         - {detail.languages[languageCode]}.
                       </li>
                     ))}
@@ -97,7 +97,7 @@ function CountryDetail() {
                     {Object.values(detail.currencies).map((currency, index) => (
                       <li
                         key={index}
-                        className="px-1 py-1 font-normal bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[200px]">
+                        className="px-1 py-1 font-normal bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[250px]">
                         - {currency.name}.
                       </li>
                     ))}
