@@ -25,8 +25,8 @@ function CountryDetail() {
 
   return (
     <div className="w-full min-h-screen pt-24 transition-colors duration-500 bg-white dark:bg-vDarkBlue">
-      <div className="container px-2  m-auto xl:px-0 md:w-[800px] 2xl:w-full">
-        <div className="py-4  max-w-[200px]">
+      <section className="container px-2 m-auto xl:px-0 2xl:w-full">
+        <div className="py-4 max-w-[200px]">
           <Link to="/">
             <button className="dark:hover:bg-[#43586b]  hover:bg-gray-200 items-center gap-10 flex px-4 py-3 rounded-md dark:bg-DarkBlue bg-white dark:text-white text-black   text-2xl w-[200px] shadow-md ">
               <ArrowBack fill="dark:#ffffff" /> Back
@@ -35,7 +35,9 @@ function CountryDetail() {
         </div>
 
         {details.map((detail) => (
-          <ul key={detail.cca2} className="flex flex-col gap-10 w sm:flex-col 2xl:flex-row">
+          <ul
+            key={detail.cca2}
+            className="flex flex-col justify-between gap-10 py-2 sm:flex-col 2xl:flex-row ">
             <img src={detail.flags.svg} className="object-cover 2xl:w-5/12" />
             <div className="w-full">
               <div className="flex flex-col">
@@ -44,49 +46,59 @@ function CountryDetail() {
                 </p>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="flex flex-col  sm:w-full [&>p]:text-DarkBlue dark:[&>p]:text-white  [&>p]:font-bold [&>p]:pb-3 xl:[&>p]:text-xl py-8 [&>p>span]:font-normal ">
+                <div className="flex flex-col  w-full gap-1  [&>p]:text-DarkBlue dark:[&>p]:text-white  [&>p]:font-bold [&>p]:pb-3  [&>p]:flex [&>p]:flex-col xl:[&>p]:text-xl py-8 ">
                   <p>
-                    Capital: <span>{detail.capital}</span>
-                  </p>
-                  <p>
-                    Population: <span>{detail.population}</span>
-                  </p>
-                  <p>
-                    Region: <span>{detail.region}</span>
-                  </p>
-                  <p>
-                    Sub Region: <span>{detail.subregion}</span>
-                  </p>
-                </div>
-                <div className="flex flex-col w-full py-8">
-                  <p className="flex items-center gap-2 pb-3 font-bold text-left text-DarkBlue dark:text-white xl:text-xl">
-                    Top Level Domain:
-                    <span className="px-3 font-normal text-black bg-gray-200 dark:text-white dark:bg-DarkBlue">
-                      {detail.tld}
+                    Capital:
+                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
+                      - {detail.capital}
                     </span>
                   </p>
-                  <ul className="flex items-center gap-2 pb-3 text-left">
-                    <p className="font-bold text-DarkBlue dark:text-white xl:text-xl ">
-                      Languages:
-                    </p>
+                  <p>
+                    Population:
+                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
+                      - {detail.population}
+                    </span>
+                  </p>
+                  <p>
+                    Region:
+                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
+                      - {detail.region}
+                    </span>
+                  </p>
+                  <p>
+                    Sub Region:
+                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
+                      - {detail.subregion}
+                    </span>
+                  </p>
+                </div>
+                <div className="flex flex-col w-full gap-2 py-8 ">
+                  <p className="flex flex-col pb-3 font-bold text-left text-DarkBlue dark:text-white xl:text-xl">
+                    Top Level Domain:
+                    <span className="px-1 py-1 font-normal max-w-[200px] bg-gray-200   text-md text-DarkBlue dark:text-white dark:bg-DarkBlue">
+                      - {detail.tld}
+                    </span>
+                  </p>
+                  <ul className="flex flex-col gap-1 pb-3 text-left">
+                    <p className="font-bold text-DarkBlue dark:text-white xl:text-xl">Languages:</p>
                     {Object.keys(detail.languages).map((languageCode, index) => (
                       <li
                         key={index}
-                        className="px-3 bg-gray-200 text-DarkBlue dark:text-white dark:bg-DarkBlue ">
-                        {detail.languages[languageCode]}.
+                        className="px-1 font-normal bg-gray-200 text-md   text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[200px]">
+                        - {detail.languages[languageCode]}.
                       </li>
                     ))}
                   </ul>
 
-                  <ul className="flex items-center gap-2 text-left">
+                  <ul className="flex flex-col w-full gap-1 text-left">
                     <p className="font-bold text-DarkBlue dark:text-white xl:text-xl">
-                      Currencies:{" "}
+                      Currencies:
                     </p>
                     {Object.values(detail.currencies).map((currency, index) => (
-                      <li key={index}>
-                        <span className="px-3 py-1 font-normal bg-gray-200 text-DarkBlue dark:text-white dark:bg-DarkBlue">
-                          {currency.name}.
-                        </span>
+                      <li
+                        key={index}
+                        className="px-1 py-1 font-normal bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[200px]">
+                        - {currency.name}.
                       </li>
                     ))}
                   </ul>
@@ -95,7 +107,7 @@ function CountryDetail() {
             </div>
           </ul>
         ))}
-      </div>
+      </section>
     </div>
   );
 }
