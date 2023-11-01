@@ -46,59 +46,53 @@ function CountryDetail() {
                 </p>
               </div>
               <div className="flex flex-col md:flex-row">
-                <div className="flex flex-col  w-full gap-1  [&>p]:text-DarkBlue dark:[&>p]:text-white  [&>p]:font-bold [&>p]:pb-3  [&>p]:flex [&>p]:flex-col xl:[&>p]:text-xl py-8 ">
+                <div className="flex flex-col   w-full gap-1  [&>p]:text-DarkBlue dark:[&>p]:text-white  [&>p]:font-bold [&>p]:pb-3 [&>p]:gap-1  [&>p]:flex [&>p>span]:text-base [&>p>span]:font-normal  xl:[&>p]:text-base py-8 ">
                   <p>
                     Capital:
-                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
-                      - {detail.capital}
-                    </span>
+                    <span>{detail.capital}</span>
                   </p>
                   <p>
                     Population:
-                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
-                      - {detail.population}
-                    </span>
+                    <span>{detail.population}</span>
                   </p>
                   <p>
                     Region:
-                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white dark:bg-DarkBlue ">
-                      - {detail.region}
-                    </span>
+                    <span>{detail.region}</span>
                   </p>
                   <p>
                     Sub Region:
-                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 text-md text-DarkBlue dark:text-white  dark:bg-DarkBlue ">
-                      - {detail.subregion}
-                    </span>
+                    <span>{detail.subregion}</span>
                   </p>
                 </div>
-                <div className="flex flex-col w-full gap-2 py-8 ">
-                  <p className="flex flex-col pb-3 font-bold text-left text-DarkBlue dark:text-white xl:text-xl">
+                <div className="flex flex-col w-full gap-2 py-8">
+                  <p className="flex gap-2 pb-3 font-bold text-left text-DarkBlue dark:text-white xl:text-base">
                     Top Level Domain:
-                    <span className="px-1 py-1 font-normal max-w-[250px] bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue">
-                      - {detail.tld}
+                    <span className="font-normal xl:text-base text-DarkBlue dark:text-white dark:bg-transparent">
+                      {detail.tld}
                     </span>
                   </p>
-                  <ul className="flex flex-col gap-1 pb-3 text-left">
-                    <p className="font-bold text-DarkBlue dark:text-white xl:text-xl">Languages:</p>
+                  <ul className="flex flex-wrap gap-1 pb-3">
+                    <p className="font-bold text-DarkBlue dark:text-white xl:text-base">
+                      Languages :
+                    </p>
                     {Object.keys(detail.languages).map((languageCode, index) => (
                       <li
                         key={index}
-                        className="px-1 font-normal bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[250px]">
-                        - {detail.languages[languageCode]}.
+                        className="px-1 font-normal xl:text-base text-DarkBlue dark:text-white dark:bg-transparent ">
+                        {detail.languages[languageCode]}.
                       </li>
                     ))}
                   </ul>
 
-                  <ul className="flex flex-col w-full gap-1 text-left">
-                    <p className="font-bold text-DarkBlue dark:text-white xl:text-xl">
+                  <ul className="flex flex-wrap items-center w-full gap-1">
+                    <p className="font-bold text-DarkBlue dark:text-white xl:text-base">
                       Currencies:
                     </p>
                     {Object.values(detail.currencies).map((currency, index) => (
                       <li
                         key={index}
-                        className="px-1 py-1 font-normal bg-gray-200 xl:text-xl text-DarkBlue dark:text-white dark:bg-DarkBlue max-w-[250px]">
-                        - {currency.name}.
+                        className="px-1 py-1 font-normal xl:text-base text-DarkBlue dark:text-white dark:bg-transparent">
+                        <p>{currency.name}.</p>
                       </li>
                     ))}
                   </ul>
